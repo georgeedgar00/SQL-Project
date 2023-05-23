@@ -1,17 +1,21 @@
 # Final-Project-Transforming-and-Analyzing-Data-with-SQL
 
 ## Project/Goals
-(fill in your description and goals here)
+Extract, clean, and transform e-commerce data use results to answer question
 
 ## Process
-### (your step 1)
-### (your step 2)
+### Open csv files and import to database
+- Opened CSV files data and have an idea of cleaning processes needed to take
+- Wrote SQL querries to create tables and columns
+- Import CSV files into the database
+- Cleaned data and remove irrelevant data 
+
 
 ## Results
-(fill in what you discovered this data could tell you and how you used the data to answer those questions)
+I was able to answer questions posed 
 
 ## Challenges 
-(discuss challenges you faced in the project)
+There were empty columns, incorrect data types used 
 
 ## Future Goals
-(what would you do if you had more time?)
+Perform more data cleaning practices, delete irrelevant data
