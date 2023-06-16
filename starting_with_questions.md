@@ -46,6 +46,7 @@ The cities with the highest level of transaction revenue are San Francisco, Sunn
 
 
 SQL Queries:
+**Query for City**
 ```
 SELECT 
 	CASE
