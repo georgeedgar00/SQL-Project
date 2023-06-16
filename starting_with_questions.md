@@ -46,10 +46,41 @@ The cities with the highest level of transaction revenue are San Francisco, Sunn
 
 
 SQL Queries:
+```
+SELECT 
+	CASE
+		WHEN als.city = '(not set)' THEN Null
+		WHEN als.city = 'not available in demo dataset' THEN Null
+	 	ELSE city
+	 END,
+	ROUND(AVG(p."orderedQuantity")) AS average
+FROM products p
+JOIN all_sessions als
+ON p."SKU" = als."productSKU"
+GROUP BY als.city
+ORDER BY average
+```
+
+**Query for Country**
+```
+SELECT 
+	CASE
+		WHEN als.country = '(not set)' THEN Null
+		ELSE country
+	END,
+	ROUND(AVG(p."orderedQuantity")) AS average
+FROM products p
+JOIN all_sessions als
+ON p."SKU" = als."productSKU"
+GROUP BY als.country
+ORDER BY average
+```
 
 
+### Answer:
+There are 252 cities on the list, with 2 cities from the United States in the top 5, Council Bluffs (USA), Cork (Ireland), Bellflower(USA). Cote d'Ivoire and Montenegro round out the top 5 without any specific city given.
 
-Answer:
+There are 134 countries on the list, with Montenegro, Mali, Papua New Guinea, Reunion, and Georgia in the top 5 in that order. There are 2 countries Iceland and Rwanda at the bottom with 0 average orders.
 
 
 
