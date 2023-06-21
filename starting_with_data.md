@@ -35,13 +35,25 @@ Answer: Google 22 oz Water Bottle at 19678 units, 22 oz Mini Mountain Bottle at 
 
 
 
-Question 3: 
+Question 3: How many products have been viewed over 100 times?
 
 SQL Queries:
+```
+SELECT 
+    "v2ProductName", 
+    "Unique Visits"
+FROM (
+    SELECT 
+        "v2ProductName", 
+        COUNT(DISTINCT("fullVisitorId")) AS "Unique Visits"
+    FROM all_sessions
+    GROUP BY "v2ProductName"
+) subquery
+WHERE "Unique Visits" > 100
+ORDER BY "Unique Visits";
+```
 
-Answer:
-
-
+Answer: 27 products have been viewed over 100 times
 
 Question 4: 
 
